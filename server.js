@@ -36,6 +36,36 @@ app.get('/api/vehicle_models', async (req, res) => {
     }
 })
 
+app.get('/api/vehicle_types', async (req, res) => {
+    try {
+        const vehicle_types = await database.allVehicleTypes();
+        res.json({vehicle_types: vehicle_types});
+    }
+    catch (error){
+        res.status(500).json({error: error.message});
+    }
+})
+
+app.get('/api/vehicle_makes', async (req, res) => {
+    try {
+        const vehicleMakes = await database.allVehicleMakes();
+        res.json({ vehicleMakes: vehicleMakes});
+    }
+    catch (error){
+        res.status(500).json({error: error.message});
+    }
+})
+
+app.get('/api/fuel_types', async (req, res) => {
+    try {
+        const fuelTypes = await database.allFuelTypes();
+        res.json({ fuelTypes : fuelTypes});
+    }
+    catch (error){
+        res.status(500).json({error: error.message});
+    }
+})
+
 app.post('/api/vehicles_from_pickup_location', async (req, res) => {
     try {
         const pickupLocation = req.body.pickupLocation;
