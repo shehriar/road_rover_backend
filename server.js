@@ -10,10 +10,10 @@ const path = require('path');
 
 app.use(bodyParser.json());
 
-app.use(express.static(path.join(__dirname, 'frontend/car-renting')));
+app.use(express.static(path.join(__dirname, 'dist/car-renting')));
 
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'frontend/car-renting/index.html'));
+    res.sendFile(path.join(__dirname, 'dist/car-renting/index.html'));
   });
 
 const PORT = process.env.PORT || 3000;
