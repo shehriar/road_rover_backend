@@ -1,6 +1,9 @@
 {
   "name": "car_renting_backend",
   "version": "1.0.0",
+  "engines": {
+    "node": ">=20 <21"
+  },
   "description": "",
   "type": "commonjs",
   "main": "server.js",
